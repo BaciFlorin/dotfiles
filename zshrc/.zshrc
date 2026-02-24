@@ -30,6 +30,7 @@ ff() {
 
 # Start work setup
 alias work='bash ~/.config/scripts/work.sh'
+alias endwork='bash ~/.config/scripts/end-work.sh'
 
 # Git aliases
 alias gc='git commit -m'

@@ -1,9 +1,13 @@
 #!/bin/bash
 
+# Chrome profile (default to "Default" if not provided)
+CHROME_PROFILE="${1:-Profile 1}"
+
 echo "Starting work setup..."
+echo "Using Chrome profile: $CHROME_PROFILE"
 
 # Launch apps
-open -a "Google Chrome" --args --profile-directory="Default"
+open -a "Google Chrome" --args --profile-directory="$CHROME_PROFILE"
 open -a "Microsoft Teams"
 open -a "Terminal"
 open -a "Docker"
@@ -18,7 +22,7 @@ aerospace list-windows --all | grep -i terminal | awk '{print $1}' | head -1 | x
 
 # Set workspace C layout to accordion horizontal
 aerospace workspace C
-aerospace layout accordion horizontal
+aerospace layout accordion vertical
 
 # Move Claude and IntelliJ to workspace 1
 aerospace list-windows --all | grep -i claude | awk '{print $1}' | head -1 | xargs -I{} aerospace move-node-to-workspace --window-id {} 1 2>/dev/null
@@ -33,7 +37,7 @@ tmux new-session -d -s work -n 'ngrok'
 tmux send-keys -t work:ngrok 'ngrok http --url=bright-legal-spaniel.ngrok-free.app 8080' Enter
 
 tmux new-window -t work -n 'twilio'
-tmux send-keys -t work:twilio 'twilio dev-phone' Enter
+tmux send-keys -t work:twilio 'twilio dev-phone --phone-number +17098004089' Enter
 
 tmux new-window -t work -n 'gcloud'
 tmux send-keys -t work:gcloud 'gcloud auth application-default login' Enter
