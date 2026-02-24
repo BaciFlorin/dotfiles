@@ -54,6 +54,7 @@ alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
 
 alt-enter = 'exec-and-forget open -a Terminal'
+alt-q = 'exec-and-forget osascript -e "tell application (path to frontmost application as text) to quit"'
 alt-t = 'exec-and-forget aerospace list-windows --all | grep -i terminal | head -1 | cut -d " " -f1 | xargs aerospace focus --window-id'
 
 alt-1 = 'workspace 1'
