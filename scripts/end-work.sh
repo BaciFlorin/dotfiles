@@ -19,4 +19,7 @@ sleep 10
 # Kill the tmux work session
 tmux kill-session -t work 2>/dev/null
 
-echo "Work session ended."
+echo "Work session ended. Logging out..."
+
+# Log out the user
+osascript -e 'tell application "System Events" to log out'
