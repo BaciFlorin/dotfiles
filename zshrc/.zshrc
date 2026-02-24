@@ -47,3 +47,9 @@ alias ga='git add -p'
 alias gcoall='git checkout -- .'
 alias gr='git remote'
 alias gre='git reset'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/work/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/work/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/work/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/work/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
