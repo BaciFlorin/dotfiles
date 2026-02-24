@@ -28,6 +28,9 @@ ff() {
     aerospace list-windows --all | fzf --bind "enter:execute-silent(aerospace focus --window-id {1})+abort"
 }
 
+# Start work setup
+alias work='bash ~/.config/scripts/work.sh'
+
 # Git aliases
 alias gc='git commit -m'
 alias gca='git commit -a -m'
