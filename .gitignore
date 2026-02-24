@@ -1,1 +1,5 @@
 .DS_Store
+
+# Ignore everything in zshrc except .zshrc
+zshrc/*
+!zshrc/.zshrc

@@ -9,16 +9,20 @@ open -a "Terminal"
 open -a "Docker"
 open -a "Claude"
 open -a "IntelliJ IDEA"
-sleep 10
+sleep 5
 
 # Move Chrome, Teams, and Terminal to workspace C
 aerospace list-windows --all | grep -i chrome | awk '{print $1}' | head -1 | xargs -I{} aerospace move-node-to-workspace --window-id {} C
 aerospace list-windows --all | grep -i teams | awk '{print $1}' | head -1 | xargs -I{} aerospace move-node-to-workspace --window-id {} C
 aerospace list-windows --all | grep -i terminal | awk '{print $1}' | head -1 | xargs -I{} aerospace move-node-to-workspace --window-id {} C
 
+# Set workspace C layout to accordion horizontal
+aerospace workspace C
+aerospace layout accordion horizontal
+
 # Move Claude and IntelliJ to workspace 1
-aerospace list-windows --all | grep -i claude | awk '{print $1}' | head -1 | xargs -I{} aerospace move-node-to-workspace --window-id {} 1
-aerospace list-windows --all | grep -i intellij | awk '{print $1}' | head -1 | xargs -I{} aerospace move-node-to-workspace --window-id {} 1
+aerospace list-windows --all | grep -i claude | awk '{print $1}' | head -1 | xargs -I{} aerospace move-node-to-workspace --window-id {} 1 2>/dev/null
+aerospace list-windows --all | grep -i intellij | awk '{print $1}' | head -1 | xargs -I{} aerospace move-node-to-workspace --window-id {} 1 2>/dev/null
 
 # Move Docker to workspace 3 and minimize it
 aerospace list-windows --all | grep -i docker | awk '{print $1}' | head -1 | xargs -I{} aerospace move-node-to-workspace --window-id {} 3
