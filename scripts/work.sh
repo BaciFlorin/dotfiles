@@ -11,8 +11,8 @@ open -a "Google Chrome" --args --profile-directory="$CHROME_PROFILE"
 open -a "Microsoft Teams"
 open -a "Terminal"
 open -a "Docker"
-open -a "Claude"
 open -a "IntelliJ IDEA"
+open -a "Claude"
 sleep 5
 
 # Move Chrome, Teams, and Terminal to workspace C
@@ -44,4 +44,4 @@ tmux new-window -t work -n 'twilio'
 tmux send-keys -t work:twilio 'twilio dev-phone --phone-number +17098004089 --force' Enter
 
 tmux new-window -t work -n 'gcloud'
-tmux send-keys -t work:gcloud 'gcloud auth application-default login' Enter
+tmux send-keys -t work:gcloud 'if gcloud auth application-default print-access-token &>/dev/null; then echo "gcloud already authenticated"; else gcloud auth application-default login; fi' Enter
