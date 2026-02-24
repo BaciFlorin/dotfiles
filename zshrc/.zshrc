@@ -5,9 +5,23 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
 # Plugins
-plugins=(git)
+plugins=(
+    git
+    brew
+    macos
+    history
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    zsh-completions
+    fzf-tab
+    you-should-use
+    autojump
+)
 
 source $ZSH/oh-my-zsh.sh
+
+# Zoxide (smarter cd)
+eval "$(zoxide init zsh)"
 
 # AeroSpace fuzzy window finder
 ff() {
