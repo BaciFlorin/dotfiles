@@ -15,13 +15,13 @@ open -a "IntelliJ IDEA"
 open -a "Claude"
 sleep 5
 
-# Move Chrome, Teams, and Terminal to workspace C
-aerospace list-windows --all | grep -i chrome | awk '{print $1}' | head -1 | xargs -I{} aerospace move-node-to-workspace --window-id {} C 2>/dev/null
-aerospace list-windows --all | grep -i teams | awk '{print $1}' | head -1 | xargs -I{} aerospace move-node-to-workspace --window-id {} C 2>/dev/null
-aerospace list-windows --all | grep -i terminal | awk '{print $1}' | head -1 | xargs -I{} aerospace move-node-to-workspace --window-id {} C 2>/dev/null
+# Move Chrome, Teams, and Terminal to workspace A
+aerospace list-windows --all | grep -i chrome | awk '{print $1}' | head -1 | xargs -I{} aerospace move-node-to-workspace --window-id {} A 2>/dev/null
+aerospace list-windows --all | grep -i teams | awk '{print $1}' | head -1 | xargs -I{} aerospace move-node-to-workspace --window-id {} A 2>/dev/null
+aerospace list-windows --all | grep -i terminal | awk '{print $1}' | head -1 | xargs -I{} aerospace move-node-to-workspace --window-id {} A 2>/dev/null
 
-# Set workspace C layout to accordion vertical
-aerospace workspace C 2>/dev/null
+# Set workspace A layout to accordion vertical
+aerospace workspace A 2>/dev/null
 aerospace layout accordion vertical
 
 # Move Claude and IntelliJ to workspace 1

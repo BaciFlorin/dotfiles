@@ -55,19 +55,20 @@ alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
 
 alt-q = 'exec-and-forget osascript -e "tell application (path to frontmost application as text) to quit"'
+alt-w = 'exec-and-forget osascript -e "tell application \"System Events\" to keystroke \"w\" using command down"'
 alt-enter = 'exec-and-forget WINDOW_ID=$(aerospace list-windows --all | grep -i terminal | head -1 | cut -d " " -f1); if [ -n "$WINDOW_ID" ]; then aerospace focus --window-id $WINDOW_ID; else open -a Terminal; fi'
 
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
 alt-4 = 'workspace 4'
-alt-c = 'workspace C'
+alt-a = 'workspace A'
 
 alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
 alt-shift-2 = 'move-node-to-workspace 2 --focus-follows-window'
 alt-shift-3 = 'move-node-to-workspace 3 --focus-follows-window'
 alt-shift-4 = 'move-node-to-workspace 4 --focus-follows-window'
-alt-shift-c = 'move-node-to-workspace C --focus-follows-window'
+alt-shift-a = 'move-node-to-workspace A --focus-follows-window'
 
 alt-leftSquareBracket = 'focus-monitor --wrap-around prev'
 alt-rightSquareBracket = 'focus-monitor --wrap-around next'
